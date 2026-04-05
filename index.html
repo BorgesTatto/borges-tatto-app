@@ -52,27 +52,19 @@
     <!-- Navegação principal -->
     <nav aria-label="Navegação principal">
       <ul>
-        <li>
-          <a href="#hero-section">Home</a>
-        </li>
-        <li>
-          <a href="#port-section">Portfólio</a>
-        </li>
-        <li>
-          <a href="#group">Equipe</a>
-        </li>
-        <li>
-          <a href="#about">Sobre</a>
-        </li>
-        <li>
-          <a href="#feedback-section">Feedback</a>
-        </li>
+        <li><a href="#hero-section">Home</a></li>
+        <li><a href="#port-section">Portfólio</a></li>
+        <li><a href="#group">Equipe</a></li>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#feedback-section">Feedback</a></li>
       </ul>
-
-      <a href="#contact">
-        <button>Contato</button>
-      </a>
+      <a href="#contact"><button>Contato</button></a>
     </nav>
+
+    <!-- Botão hamburguer mobile -->
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
   <div id="hero-section">
@@ -104,12 +96,12 @@
   
         <div class="cards-wrapper">
           <div class="cards">
-            <img src="./assets/portfolio/01.png" alt />
-            <img src="./assets/portfolio/02.jpg" alt />
-            <img src="./assets/portfolio/03.jpg" alt />
-            <img src="./assets/portfolio/04.jpg" alt />
-            <img src="./assets/portfolio/05.jpg" alt />
-            <img src="./assets/portfolio/06.jpg" alt />
+            <img src="./assets/portfolio/01.png" alt="Tatuagem 1" />
+            <img src="./assets/portfolio/02.jpg" alt="Tatuagem 2" />
+            <img src="./assets/portfolio/03.jpg" alt="Tatuagem 3" />
+            <img src="./assets/portfolio/04.jpg" alt="Tatuagem 4" />
+            <img src="./assets/portfolio/05.jpg" alt="Tatuagem 5" />
+            <img src="./assets/portfolio/06.jpg" alt="Tatuagem 6" />
           </div>
         </div>
   
@@ -129,55 +121,62 @@
 
   <!-- Seção de Equipe -->
   <section id="group">
-    <!-- Conteúdo visível -->
     <div class="group">
       <h1>Quem Somos</h1>
 
-      <div style="display: flex; flex-direction: column; width: 100%; gap: 2rem; padding: 0 8rem;">
-        <div style="display: flex; flex-direction: row; align-items: center; justify-content: space-around;">
-          <!-- <button class="port-button" style="display: flex; justify-content: center; align-items: center;">
-            <i class="ph ph-arrow-left"></i>
-          </button> -->
+      <div class="team-carousel">
+        <button class="port-button team-prev"><i class="ph ph-arrow-left"></i></button>
 
-          <div style="display: flex;height: 100%; justify-content: center; align-items: center; gap: 2rem;">
-            <span style="height: 100%; width: 4px; background-color: white;"></span>
-            <p style="text-indent: 52px; width: 550px; font-weight: 200; font-size: 1.52cqmax; text-align: justify; padding: 0.25rem; color: var(--white);">
-              Conhecido pela atenção aos
-              detalhes e projetos autorais, Guilherme Borges
-              acredita que tatuar é mais do que
-              estética — é marcar momentos e
-              sentimentos de forma única e
-              duradoura.
-            </p>
+        <div class="team-track-wrapper">
+          <div class="team-track">
 
-            <div style="display: flex; flex-direction: column;">
-              <img style="border: 1px solid white; border-radius: 24px;" height="342px" src="./assets/group/guilherme.jpg"
-                alt="Foto de Guilherme Borges" />
-              <p style="font-size: 2.12rem;">Guilherme Borges</p>
+            <!-- Membro 1 -->
+            <div class="group-content">
+              <span class="divider-line"></span>
+              <p class="group-bio">
+                Conhecido pela atenção aos detalhes e projetos autorais, Guilherme Borges
+                acredita que tatuar é mais do que estética — é marcar momentos e
+                sentimentos de forma única e duradoura.
+              </p>
+              <div class="group-member">
+                <img src="./assets/group/guilherme.jpg" alt="Foto de Guilherme Borges" />
+                <p class="member-name">Guilherme Borges</p>
+              </div>
             </div>
-          </div>
 
-          <!-- <button class="port-button" style="display: flex; justify-content: center; align-items: center;">
-            <i class="ph ph-arrow-right"></i>
-          </button> -->
+            <!-- Membro 2 (preencha os dados depois) -->
+            <div class="group-content">
+              <span class="divider-line"></span>
+              <p class="group-bio">
+                Descrição da segunda pessoa da equipe.
+              </p>
+              <div class="group-member">
+                <img src="./assets/group/image1.png" alt="Foto do segundo membro" />
+                <p class="member-name">Nome do Membro</p>
+              </div>
+            </div>
+
+          </div>
         </div>
 
-        <!-- pontinhos -->
-        <!-- <div>
-          <i class="ph ph-circle"></i>
-          <i class="ph ph-circle"></i>
-          <i class="ph ph-circle"></i>
-        </div> -->
+        <button class="port-button team-next"><i class="ph ph-arrow-right"></i></button>
       </div>
+
+      <!-- Indicadores -->
+      <div class="team-dots">
+        <span class="team-dot active"></span>
+        <span class="team-dot"></span>
+      </div>
+    </div>
   </section>
 
   <!-- Seção de Sobre -->
   <section id="about">
     <div class="about">
       <h1>Sobre</h1>
-      <div style="display: flex; flex-direction: row; gap: 4rem;">
+      <div class="about-content">
         <div class="text-container">
-          <span style="height: 100%; width: 4px; background-color: white;"></span>
+          <span class="divider-line"></span>
           <p>Minha conexão com a arte começou
             na infância, inspirado por grafites
             de um jogo de dança. Desde então,
@@ -192,11 +191,13 @@
             criatividade e paixão pela arte.
           </p>
         </div>
-
         <div class="video-container">
-          <video loop autoplay muted>
-            <source src="./assets/about/video-studio.mp4" type="video/mp4">
-          </video>
+          <div class="video-thumb" id="about-video-thumb" title="Clique para ampliar">
+            <video id="about-video" loop autoplay muted playsinline>
+              <source src="./assets/about/video-studio.mp4" type="video/mp4">
+            </video>
+            <div class="video-play-hint"><i class="ph ph-arrows-out"></i></div>
+          </div>
         </div>
       </div>
     </div>
@@ -207,13 +208,10 @@
     <div class="container-feedback">
       <h1>Feedback</h1>
 
-      <div style="display: flex; flex-direction: column; flex: 1; justify-content: center;">
+      <div class="feedback-wrapper-outer">
         <div class="wrapper-feedback">
           <article>
-            <figure>
-              <img class="banner" src="assets/feedback/client1-tatto.jpg" alt="tatuagem de leão" />
-            </figure>
-
+            <img class="banner" src="assets/feedback/client1-tatto.jpg" alt="Tatuagem de tigre realista — cliente Bruno Castilho" />
             <div class="comment">
               <h2>Bruno Castilho</h2>
               <p>
@@ -223,10 +221,7 @@
             </div>
           </article>
           <article>
-            <figure>
-              <img class="banner" src="assets/feedback/client2-tatto.jpg" alt="tatuagem de leão" />
-            </figure>
-
+            <img class="banner" src="assets/feedback/client2-tatto.jpg" alt="Tatuagem do escudo do Corinthians — cliente Leandro Rocha" />
             <div class="comment">
               <h2>Leandro Rocha</h2>
               <p>
@@ -236,10 +231,7 @@
             </div>
           </article>
           <article>
-            <figure>
-              <img class="banner" src="assets/feedback/client3-tatto.jpg" alt="tatuagem de leão" />
-            </figure>
-
+            <img class="banner" src="assets/feedback/client3-tatto.jpg" alt="Tatuagem delicada religiosa — cliente Aline Ferreira" />
             <div class="comment">
               <h2>Aline Ferreira</h2>
               <p>
@@ -259,7 +251,7 @@
       <h1>Contato</h1>
 
       <div class="contact-content">
-        <iframe class="map" style="border-radius: 1rem; border: 4px solid white;"
+        <iframe class="map"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d913.4498118926165!2d-46.765963083091314!3d-23.683136167091252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5239279b4521%3A0x4abc864f457ec467!2sR.%20Santa%20Z%C3%A9lia%2C%20177%20-%20Jardim%20Santa%20Zelia%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004933-110!5e0!3m2!1spt-BR!2sbr!4v1748807683014!5m2!1spt-BR!2sbr"
           style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
@@ -268,7 +260,7 @@
           Endereço: Rua Divina Comédia, 74, Jardim Santa Zélia, São Paulo - SP, 04933-110<br>
         </p>
 
-        <ul style="list-style: none; padding: 0; margin: 0;">
+        <ul class="contact-info">
           <li>Tel.: +55 11 98347-8673</li>
           <li>Email: sampatattoo@gmail.com</li>
           <li>Segunda a Sexta: 10h - 19h</li>
@@ -277,17 +269,17 @@
 
         <div class="social-buttons">
           <a href="https://www.instagram.com/guiltattoo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            target="_blank" class="social-button instagram">
+            target="_blank" rel="noopener noreferrer" class="social-button instagram">
             <i class="ph ph-instagram-logo"></i>
           </a>
-          <a href="https://www.facebook.com/" target="_blank" class="social-button facebook">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-button facebook">
             <i class="ph ph-facebook-logo"></i>
           </a>
 
           <div class="whatsapp-button">
             <link rel="stylesheet"
               href="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-button.css">
-            <a id="robbu-whatsapp-button" target="_blank" href="https://api.whatsapp.com/send?phone=5511983478673">
+            <a id="robbu-whatsapp-button" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?phone=5511983478673">
               <div class="rwb-tooltip">Clique aqui e fale conosco no WhatsApp para agendar sua
                 tatuagem.</div>
               <img src="https://cdn.positus.global/production/resources/robbu/whatsapp-button/whatsapp-icon.svg">
@@ -296,11 +288,27 @@
         </div>
       </div>
 
-      <footer style="margin-bottom: 1rem;">
+      <footer>
         <p>© 2025 BorgesTattoo – Todos os direitos reservados.</p>
       </footer>
     </div>
   </section>
+
+  <!-- Lightbox imagem -->
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizar imagem">
+    <button id="lightbox-close" aria-label="Fechar">&times;</button>
+    <div id="lightbox-img-wrapper">
+      <img id="lightbox-img" src="" alt="" />
+    </div>
+  </div>
+
+  <!-- Lightbox vídeo -->
+  <div id="video-lightbox" role="dialog" aria-modal="true" aria-label="Visualizar vídeo">
+    <button id="video-lightbox-close" aria-label="Fechar">&times;</button>
+    <video id="video-lightbox-player" loop autoplay muted playsinline controls>
+      <source src="./assets/about/video-studio.mp4" type="video/mp4">
+    </video>
+  </div>
 
   <script type="text/javascript" src="./script.js"></script>
 </body>
