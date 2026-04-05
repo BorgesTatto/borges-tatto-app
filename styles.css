@@ -19,11 +19,21 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-color: var(--black);
   color: var(--white);
   font-family: "Noto Sans", sans-serif;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+#particles-js {
+  pointer-events: none;
 }
 
 /* ── HEADER ── */
@@ -831,6 +841,11 @@ footer {
 
 #lightbox-img.zoomed { transform: scale(2); }
 
+@media (max-width: 640px) {
+  #lightbox-img-wrapper { cursor: default; }
+  #lightbox-img.zoomed { transform: scale(1); }
+}
+
 /* ── RESPONSIVIDADE ── */
 
 /* Tablet */
@@ -863,10 +878,27 @@ footer {
 
   .branding h1 { display: none; }
 
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  /* empurra o conteúdo para baixo do header fixo */
+  body > div#hero-section,
+  body > section {
+    scroll-margin-top: var(--header-h);
+  }
+
+  #hero-section {
+    padding-top: var(--header-h);
+  }
+
   header > nav {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 75vw;
     max-width: 300px;
     height: 100vh;
@@ -877,11 +909,11 @@ footer {
     padding: 2rem 1.5rem;
     background: #111;
     border-left: 1px solid rgba(255,255,255,0.1);
-    transition: right 0.35s ease;
+    transition: transform 0.35s ease;
     z-index: 1000;
   }
 
-  header > nav.open { right: 0; }
+  header > nav.open { transform: translateX(0); }
 
   header > nav ul {
     flex-direction: column;
